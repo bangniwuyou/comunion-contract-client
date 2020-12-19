@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { DiscoModule } from './disco/disco.module';
-import { SwapModule } from './swap/swap.module';
+import { DiscoModule } from './modules/disco/disco.module';
+import { SwapModule } from './modules/swap/swap.module';
 
 @Module({
   imports: [
