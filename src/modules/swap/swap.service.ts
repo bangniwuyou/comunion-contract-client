@@ -8,10 +8,17 @@ import { ContractContext as SwapPairContractContext } from './abi/SwapPair';
 import SwapFactoryAbi = require('./abi/SwapFactory.abi.json');
 import SwapPairAbi = require('./abi/SwapPair.abi.json');
 import { EventData } from 'ethereum-abi-types-generator';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Transaction } from './entities/transaction.entity';
 
 @Injectable()
 export class SwapService {
-  constructor(private readonly configServise: ConfigService) {}
+  constructor(
+    private readonly configServise: ConfigService,
+    @InjectRepository(Transaction)
+    private readonly transactionRepository: Repository<Transaction>,
+  ) {}
 
   private ethClient: Eth;
 
@@ -19,6 +26,8 @@ export class SwapService {
 
   async onModuleInit() {
     this.init();
+
+    // console.log(await this.transactionRepository.find());
 
     // 订阅Swap工厂
     // this.subscribeSwapFactoryContract();
