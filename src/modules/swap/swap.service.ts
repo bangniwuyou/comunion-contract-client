@@ -44,15 +44,15 @@ export class SwapService {
     const wsEndPoint = this.configServise.get<string>(
       'INFURA_ENDPOINT_MAINNET_WS',
     );
-    const swapContractAddress = this.configServise.get<string>(
-      'SWAP_CONTRACT_ADDRESS',
+    const swapFactoryContractAddress = this.configServise.get<string>(
+      'SWAP_FACTORY_CONTRACT_ADDRESS',
     );
     this.ethClient = new (Web3 as any)(
       new (Web3 as any).providers.WebsocketProvider(wsEndPoint),
     ).eth;
     this.swapFactoryContract = (new this.ethClient.Contract(
       SwapFactoryAbi as AbiItem[],
-      swapContractAddress,
+      swapFactoryContractAddress,
     ) as unknown) as SwapFactoryContractContext;
   }
 
@@ -102,7 +102,7 @@ export class SwapService {
   }
 
   private async handleSwapFactoryPairCreatedEvent(data: EventData) {
-    console.log('handleSwapPairSwapEvent', data);
+    console.log('handleSwapFactoryPairCreatedEvent', data);
   }
 
   private async handleSwapPairSwapEvent(data: EventData) {
@@ -110,14 +110,14 @@ export class SwapService {
   }
 
   private async handleSwapPairSyncEvent(data: EventData) {
-    console.log('handleSwapPairSwapEvent', data);
+    console.log('handleSwapPairSyncEvent', data);
   }
 
   private async handleSwapPairMintEvent(data: EventData) {
-    console.log('handleSwapPairSwapEvent', data);
+    console.log('handleSwapPairMintEvent', data);
   }
 
   private async handleSwapPairBurnEvent(data: EventData) {
-    console.log('handleSwapPairSwapEvent', data);
+    console.log('handleSwapPairBurnEvent', data);
   }
 }
