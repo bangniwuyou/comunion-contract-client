@@ -91,6 +91,7 @@ export class DiscoService {
     }
 
     disco.state = DiscoState.CREATED;
+    disco.updatedAt = new Date();
     await this.discoRepository.save(disco);
   }
 
@@ -110,6 +111,7 @@ export class DiscoService {
     }
 
     disco.state = DiscoState.ENABLED;
+    disco.updatedAt = new Date();
     await this.discoRepository.save(disco);
   }
 
@@ -131,6 +133,7 @@ export class DiscoService {
     }
 
     disco.state = DiscoState.FUNDRAISING_FAIED;
+    disco.updatedAt = new Date();
     await this.discoRepository.save(disco);
   }
 
@@ -154,6 +157,7 @@ export class DiscoService {
     }
 
     disco.state = DiscoState.FUNDRAISING_SUCCESS;
+    disco.updatedAt = new Date();
     await this.discoRepository.save(disco);
   }
 

@@ -1,0 +1,26 @@
+export const DiscoEventsCreatedDisco = {
+  removed: false,
+  logIndex: 9,
+  transactionIndex: 6,
+  transactionHash:
+    '0xd950b0fe7f25ebda5eac613111a2ccdbc2d408fe27209ef9a636ee2d03399de5',
+  blockHash:
+    '0x7ac6cf83fc9be8ea8033ca7f7f418aeb1452a07039daccd8e57829ce0b5a22e7',
+  blockNumber: 4127239,
+  address: '0x2872EDbd154ADf0FDc8bA6CD2f87427AaD093C43',
+  id: 'log_abdb10ac',
+  returnValues: {
+    '0': '2786284556645308829',
+    discoId: '2786284556645308829',
+  },
+  event: 'createdDisco',
+  signature:
+    '0x70c273c4ef6d4736a04d6cd282b941b06fd94cc05df355ac361930089e2c7c34',
+  raw: {
+    data:
+      '0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000133237383632383435353636343533303838323900000000000000000000000000',
+    topics: [
+      '0x70c273c4ef6d4736a04d6cd282b941b06fd94cc05df355ac361930089e2c7c34',
+    ],
+  },
+};
