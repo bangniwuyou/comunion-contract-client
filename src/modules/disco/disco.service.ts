@@ -31,6 +31,7 @@ export class DiscoService {
 
     // 订阅Disco
     this.subscribeDiscoContract();
+    console.log(this.discoRepository.find());
   }
 
   // 初始化
@@ -67,7 +68,7 @@ export class DiscoService {
     });
   }
 
-  private async getDiscoById(id: number): Promise<Disco> {
+  private async getDiscoById(id: string): Promise<Disco> {
     return await this.discoRepository.findOne({
       where: {
         id,
@@ -78,14 +79,16 @@ export class DiscoService {
   // 处理创建DISCO事件
   private async handleCreatedDiscoEvent(data: EventData): Promise<void> {
     console.log(`${JSON.stringify(data)}`);
-    const discoId = parseInt(data.returnValues.discoId, 10);
+    const discoId = data.returnValues.discoId;
     const disco = await this.getDiscoById(discoId);
 
     if (!disco) {
       console.error(`[handleCreatedDiscoEvent] disco not found`);
+      return;
     }
     if (disco.state !== DiscoState.CREATING) {
       console.error(`[handleCreatedDiscoEvent] disco state must be "CREATING"`);
+      return;
     }
 
     disco.state = DiscoState.CREATED;
@@ -95,14 +98,16 @@ export class DiscoService {
   // 处理打开DISCO事件
   private async handleEnabeldDiscoEvent(data: EventData): Promise<void> {
     console.log(`${JSON.stringify(data)}`);
-    const discoId = parseInt(data.returnValues.discoId, 10);
+    const discoId = data.returnValues.discoId;
     const disco = await this.getDiscoById(discoId);
 
     if (!disco) {
       console.error(`[handleEnabeldDiscoEvent] disco not found`);
+      return;
     }
     if (disco.state !== DiscoState.ENABLING) {
       console.error(`[handleEnabeldDiscoEvent] disco state must be "ENABLING"`);
+      return;
     }
 
     disco.state = DiscoState.ENABLED;
@@ -112,16 +117,18 @@ export class DiscoService {
   // 处理DISCO募资失败事件
   private async handleFundraisingFailedEvent(data: EventData): Promise<void> {
     console.log(`${JSON.stringify(data)}`);
-    const discoId = parseInt(data.returnValues.discoId, 10);
+    const discoId = data.returnValues.discoId;
     const disco = await this.getDiscoById(discoId);
 
     if (!disco) {
       console.error(`[handleFundraisingFailedEvent] disco not found`);
+      return;
     }
     if (disco.state !== DiscoState.ENABLED) {
       console.error(
         `[handleFundraisingFailedEvent] disco state must be "ENABLED"`,
       );
+      return;
     }
 
     disco.state = DiscoState.FUNDRAISING_FAIED;
@@ -133,16 +140,18 @@ export class DiscoService {
     data: EventData,
   ): Promise<void> {
     console.log(`${JSON.stringify(data)}`);
-    const discoId = parseInt(data.returnValues.discoId, 10);
+    const discoId = data.returnValues.discoId;
     const disco = await this.getDiscoById(discoId);
 
     if (!disco) {
       console.error(`[handleFundraisingSuccessedEvent] disco not found`);
+      return;
     }
     if (disco.state !== DiscoState.ENABLED) {
       console.error(
         `[handleFundraisingSuccessedEvent] disco state must be "ENABLED"`,
       );
+      return;
     }
 
     disco.state = DiscoState.FUNDRAISING_SUCCESS;

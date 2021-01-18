@@ -5,12 +5,12 @@ export class Disco {
   @PrimaryGeneratedColumn({
     comment: '',
   })
-  id: number;
+  id: string;
 
   @Column({
     comment: '',
   })
-  startupId: number;
+  startupId: string;
 
   @Column({
     comment: '',

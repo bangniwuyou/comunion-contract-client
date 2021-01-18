@@ -5,17 +5,17 @@ export class DiscoInvestor {
   @PrimaryGeneratedColumn({
     comment: '',
   })
-  id: number;
+  id: string;
 
   @Column({
     comment: '',
   })
-  discoId: number;
+  discoId: string;
 
   @Column({
     comment: '',
   })
-  uid: number;
+  uid: string;
 
   @Column({
     comment: '',

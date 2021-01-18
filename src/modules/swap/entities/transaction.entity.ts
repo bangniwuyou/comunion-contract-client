@@ -5,10 +5,10 @@ export class Transaction {
   @PrimaryGeneratedColumn({
     comment: '',
   })
-  id: number;
+  id: string;
 
   @Column({
     comment: '',
   })
-  txId: number;
+  txId: string;
 }
