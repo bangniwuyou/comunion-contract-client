@@ -31,7 +31,6 @@ export class DiscoService {
 
     // 订阅Disco
     this.subscribeDiscoContract();
-    console.log(this.discoRepository.find());
   }
 
   // 初始化
