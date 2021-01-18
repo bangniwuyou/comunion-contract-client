@@ -41,9 +41,7 @@ export class SwapService {
 
   // 初始化
   private init() {
-    const wsEndPoint = this.configServise.get<string>(
-      'INFURA_ENDPOINT_MAINNET_WS',
-    );
+    const wsEndPoint = this.configServise.get<string>('INFURA_ENDPOINT_WS');
     const swapFactoryContractAddress = this.configServise.get<string>(
       'SWAP_FACTORY_CONTRACT_ADDRESS',
     );
@@ -101,19 +99,21 @@ export class SwapService {
     }
   }
 
-  private async handleSwapFactoryPairCreatedEvent(data: EventData) {
+  private async handleSwapFactoryPairCreatedEvent(
+    data: EventData,
+  ): Promise<void> {
     console.log('handleSwapFactoryPairCreatedEvent', data);
   }
 
-  private async handleSwapPairSwapEvent(data: EventData) {
+  private async handleSwapPairSwapEvent(data: EventData): Promise<void> {
     console.log('handleSwapPairSwapEvent', data);
   }
 
-  private async handleSwapPairSyncEvent(data: EventData) {
+  private async handleSwapPairSyncEvent(data: EventData): Promise<void> {
     console.log('handleSwapPairSyncEvent', data);
   }
 
-  private async handleSwapPairMintEvent(data: EventData) {
+  private async handleSwapPairMintEvent(data: EventData): Promise<void> {
     console.log('handleSwapPairMintEvent', data);
   }
 

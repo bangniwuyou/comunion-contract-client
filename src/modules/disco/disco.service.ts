@@ -6,10 +6,21 @@ import { AbiItem } from 'web3-utils';
 import { ContractContext as DiscoContractContext } from './abi/Disco';
 import { EventData } from 'ethereum-abi-types-generator';
 import DiscoAbi = require('./abi/Disco.abi.json');
+import { InjectRepository } from '@nestjs/typeorm';
+import { Disco } from './entities/disco.entity';
+import { DiscoInvestor } from './entities/disco_investor.entity';
+import { Repository } from 'typeorm';
+import { DiscoState } from './interfaces/disco_state.interface';
 
 @Injectable()
 export class DiscoService {
-  constructor(private readonly configServise: ConfigService) {}
+  constructor(
+    private readonly configServise: ConfigService,
+    @InjectRepository(Disco)
+    private readonly discoRepository: Repository<Disco>,
+    @InjectRepository(DiscoInvestor)
+    private readonly discoInvestorRepository: Repository<DiscoInvestor>,
+  ) {}
 
   private ethClient: Eth;
 
@@ -19,14 +30,12 @@ export class DiscoService {
     this.init();
 
     // 订阅Disco
-    // this.subscribeDiscoContract();
+    this.subscribeDiscoContract();
   }
 
   // 初始化
   private init() {
-    const wsEndPoint = this.configServise.get<string>(
-      'INFURA_ENDPOINT_MAINNET_WS',
-    );
+    const wsEndPoint = this.configServise.get<string>('INFURA_ENDPOINT_WS');
     const discoContractAddress = this.configServise.get<string>(
       'DISCO_CONTRACT_ADDRESS',
     );
@@ -39,6 +48,7 @@ export class DiscoService {
     ) as unknown) as DiscoContractContext;
   }
 
+  // 订阅DISCO合约
   private async subscribeDiscoContract() {
     this.discoContract.events.createdDisco({}).on('data', (data) => {
       this.handleCreatedDiscoEvent(data);
@@ -49,27 +59,98 @@ export class DiscoService {
     this.discoContract.events.fundraisingFailed({}).on('data', (data) => {
       this.handleFundraisingFailedEvent(data);
     });
-    this.discoContract.events.fundraisingFinished({}).on('data', (data) => {
-      this.handleFundraisingFinishedEvent(data);
-    });
     this.discoContract.events.fundraisingSuccessed({}).on('data', (data) => {
       this.handleFundraisingSuccessedEvent(data);
     });
+    this.discoContract.events.investToDisco({}).on('data', (data) => {
+      this.handleInvestToDiscoEvent(data);
+    });
   }
 
-  private async handleCreatedDiscoEvent(data: EventData) {
-    console.log('handleCreatedDiscoEvent', data);
+  private async getDiscoById(id: number): Promise<Disco> {
+    return await this.discoRepository.findOne({
+      where: {
+        id,
+      },
+    });
   }
-  private async handleEnabeldDiscoEvent(data: EventData) {
-    console.log('handleEnabeldDiscoEvent', data);
+
+  // 处理创建DISCO事件
+  private async handleCreatedDiscoEvent(data: EventData): Promise<void> {
+    console.log(`${JSON.stringify(data)}`);
+    const discoId = parseInt(data.returnValues.discoId, 10);
+    const disco = await this.getDiscoById(discoId);
+
+    if (!disco) {
+      console.error(`[handleCreatedDiscoEvent] disco not found`);
+    }
+    if (disco.state !== DiscoState.CREATING) {
+      console.error(`[handleCreatedDiscoEvent] disco state must be "CREATING"`);
+    }
+
+    disco.state = DiscoState.CREATED;
+    await this.discoRepository.save(disco);
   }
-  private async handleFundraisingFailedEvent(data: EventData) {
-    console.log('handleFundraisingFailedEvent', data);
+
+  // 处理打开DISCO事件
+  private async handleEnabeldDiscoEvent(data: EventData): Promise<void> {
+    console.log(`${JSON.stringify(data)}`);
+    const discoId = parseInt(data.returnValues.discoId, 10);
+    const disco = await this.getDiscoById(discoId);
+
+    if (!disco) {
+      console.error(`[handleEnabeldDiscoEvent] disco not found`);
+    }
+    if (disco.state !== DiscoState.ENABLING) {
+      console.error(`[handleEnabeldDiscoEvent] disco state must be "ENABLING"`);
+    }
+
+    disco.state = DiscoState.ENABLED;
+    await this.discoRepository.save(disco);
   }
-  private async handleFundraisingFinishedEvent(data: EventData) {
-    console.log('handleFundraisingFinishedEvent', data);
+
+  // 处理DISCO募资失败事件
+  private async handleFundraisingFailedEvent(data: EventData): Promise<void> {
+    console.log(`${JSON.stringify(data)}`);
+    const discoId = parseInt(data.returnValues.discoId, 10);
+    const disco = await this.getDiscoById(discoId);
+
+    if (!disco) {
+      console.error(`[handleFundraisingFailedEvent] disco not found`);
+    }
+    if (disco.state !== DiscoState.ENABLED) {
+      console.error(
+        `[handleFundraisingFailedEvent] disco state must be "ENABLED"`,
+      );
+    }
+
+    disco.state = DiscoState.FUNDRAISING_FAIED;
+    await this.discoRepository.save(disco);
   }
-  private async handleFundraisingSuccessedEvent(data: EventData) {
-    console.log('handleFundraisingSuccessedEvent', data);
+
+  // 处理DISCO募资成功事件
+  private async handleFundraisingSuccessedEvent(
+    data: EventData,
+  ): Promise<void> {
+    console.log(`${JSON.stringify(data)}`);
+    const discoId = parseInt(data.returnValues.discoId, 10);
+    const disco = await this.getDiscoById(discoId);
+
+    if (!disco) {
+      console.error(`[handleFundraisingSuccessedEvent] disco not found`);
+    }
+    if (disco.state !== DiscoState.ENABLED) {
+      console.error(
+        `[handleFundraisingSuccessedEvent] disco state must be "ENABLED"`,
+      );
+    }
+
+    disco.state = DiscoState.FUNDRAISING_SUCCESS;
+    await this.discoRepository.save(disco);
+  }
+
+  // 处理投资事件
+  private async handleInvestToDiscoEvent(data: EventData): Promise<void> {
+    console.log(`${JSON.stringify(data)}`);
   }
 }
