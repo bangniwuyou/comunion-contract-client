@@ -5,10 +5,13 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { DiscoModule } from './modules/disco/disco.module';
 import { SwapModule } from './modules/swap/swap.module';
 
+const ENV = process.env.NODE_ENV;
+
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: !ENV ? '.env' : `.env.${ENV}`,
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
