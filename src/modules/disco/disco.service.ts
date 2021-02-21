@@ -50,21 +50,55 @@ export class DiscoService {
 
   // 订阅DISCO合约
   private async subscribeDiscoContract() {
-    this.discoContract.events.createdDisco({}).on('data', (data) => {
-      this.handleCreatedDiscoEvent(data);
-    });
-    this.discoContract.events.enabeldDisco({}).on('data', (data) => {
-      this.handleEnabeldDiscoEvent(data);
-    });
-    this.discoContract.events.fundraisingFailed({}).on('data', (data) => {
-      this.handleFundraisingFailedEvent(data);
-    });
-    this.discoContract.events.fundraisingSuccessed({}).on('data', (data) => {
-      this.handleFundraisingSuccessedEvent(data);
-    });
-    this.discoContract.events.investToDisco({}).on('data', (data) => {
-      this.handleInvestToDiscoEvent(data);
-    });
+    this.discoContract.events
+      .createdDisco({})
+      .on('data', (data) => {
+        this.handleCreatedDiscoEvent(data);
+      })
+      .on('error', (error) => {
+        console.log(`[SubscribtionCreatedDisco] error`);
+        console.error(error);
+      });
+
+    this.discoContract.events
+      .enabeldDisco({})
+      .on('data', (data) => {
+        this.handleEnabeldDiscoEvent(data);
+      })
+      .on('error', (error) => {
+        console.log(`[SubscribtionEnabeldDisco] error`);
+        console.error(error);
+      });
+
+    this.discoContract.events
+      .fundraisingFailed({})
+      .on('data', (data) => {
+        this.handleFundraisingFailedEvent(data);
+      })
+      .on('error', (error) => {
+        console.log(`[SubscribtionFundraisingFailed] error`);
+        console.error(error);
+      });
+
+    this.discoContract.events
+      .fundraisingSuccessed({})
+      .on('data', (data) => {
+        this.handleFundraisingSuccessedEvent(data);
+      })
+      .on('error', (error) => {
+        console.log(`[SubscribtionFundraisingSuccessed] error`);
+        console.error(error);
+      });
+
+    this.discoContract.events
+      .investToDisco({})
+      .on('data', (data) => {
+        this.handleInvestToDiscoEvent(data);
+      })
+      .on('error', (error) => {
+        console.log(`[SubscribtionInvestToDisco] error`);
+        console.error(error);
+      });
   }
 
   private async getDiscoById(id: string): Promise<Disco> {
