@@ -40,7 +40,13 @@ export class DiscoService {
       'DISCO_CONTRACT_ADDRESS',
     );
     this.ethClient = new (Web3 as any)(
-      new (Web3 as any).providers.WebsocketProvider(wsEndPoint),
+      new (Web3 as any).providers.WebsocketProvider(wsEndPoint, {
+        // 自动重连
+        reconnect: {
+          auto: true,
+          onTimeout: true,
+        },
+      }),
     ).eth;
     this.discoContract = (new this.ethClient.Contract(
       DiscoAbi as AbiItem[],
