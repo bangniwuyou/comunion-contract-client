@@ -131,7 +131,7 @@ export class DiscoService {
     }
 
     disco.state = DiscoState.CREATED;
-    disco.contractAddr = data.returnValues.addr;
+    disco.fundRaisingAddr = data.returnValues.addr;
     disco.updatedAt = new Date();
     await this.discoRepository.save(disco);
   }

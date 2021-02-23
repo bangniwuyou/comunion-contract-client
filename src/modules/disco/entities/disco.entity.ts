@@ -75,7 +75,7 @@ export class Disco {
   @Column({
     comment: '',
   })
-  contractAddr: string;
+  fundRaisingAddr: string;
 
   @Column({
     comment: '',
