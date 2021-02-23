@@ -124,6 +124,7 @@ export interface DiscoEventsContext {
 }
 export type DiscoMethodNames =
   | 'new'
+  | 'discoAddress'
   | 'discos'
   | 'investors'
   | 'status'
@@ -131,6 +132,7 @@ export type DiscoMethodNames =
   | 'getDate'
   | 'newDisco'
   | 'enableDisco'
+  | 'finishedDisco'
   | 'investor';
 export interface DiscosResponse {
   walletAddr: string;
@@ -149,8 +151,6 @@ export interface InvestorsResponse {
   investor: string;
   value: string;
   time: string;
-  sharedToken: string;
-  rewardedToken: string;
 }
 export interface StatusResponse {
   isFinished: boolean;
@@ -165,6 +165,14 @@ export interface Disco {
    * Type: constructor
    */
   'new'(): MethodReturnContext;
+  /**
+   * Payable: false
+   * Constant: true
+   * StateMutability: view
+   * Type: function
+   * @param parameter0 Type: string, Indexed: false
+   */
+  discoAddress(parameter0: string): MethodConstantReturnContext<string>;
   /**
    * Payable: false
    * Constant: true
@@ -250,18 +258,15 @@ export interface Disco {
    * StateMutability: nonpayable
    * Type: function
    * @param id Type: string, Indexed: false
-   * @param investorAddress Type: address, Indexed: false
-   * @param value Type: uint256, Indexed: false
-   * @param time Type: uint256, Indexed: false
-   * @param sharedToken Type: uint256, Indexed: false
-   * @param rewardedToken Type: uint256, Indexed: false
    */
-  investor(
-    id: string,
-    investorAddress: string,
-    value: string,
-    time: string,
-    sharedToken: string,
-    rewardedToken: string,
-  ): MethodReturnContext;
+  finishedDisco(id: string): MethodReturnContext;
+  /**
+   * Payable: true
+   * Constant: false
+   * StateMutability: payable
+   * Type: function
+   * @param id Type: string, Indexed: false
+   * @param time Type: uint256, Indexed: false
+   */
+  investor(id: string, time: string): MethodPayableReturnContext;
 }

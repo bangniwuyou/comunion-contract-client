@@ -13,6 +13,12 @@
         "internalType": "string",
         "name": "discoId",
         "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "contract DiscoAddr",
+        "name": "addr",
+        "type": "address"
       }
     ],
     "name": "createdDisco",
@@ -78,10 +84,43 @@
         "internalType": "string",
         "name": "discoId",
         "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "investorAddr",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
     "name": "investToDisco",
     "type": "event"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "discoAddress",
+    "outputs": [
+      {
+        "internalType": "contract DiscoAddr",
+        "name": "discoAddr",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "constant": true,
@@ -178,16 +217,6 @@
       {
         "internalType": "uint256",
         "name": "time",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "sharedToken",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "rewardedToken",
         "type": "uint256"
       }
     ],
@@ -348,37 +377,32 @@
         "internalType": "string",
         "name": "id",
         "type": "string"
-      },
+      }
+    ],
+    "name": "finishedDisco",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
       {
-        "internalType": "address",
-        "name": "investorAddress",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "value",
-        "type": "uint256"
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
       },
       {
         "internalType": "uint256",
         "name": "time",
         "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "sharedToken",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "rewardedToken",
-        "type": "uint256"
       }
     ],
     "name": "investor",
     "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
+    "payable": true,
+    "stateMutability": "payable",
     "type": "function"
   }
 ]

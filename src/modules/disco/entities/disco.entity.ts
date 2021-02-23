@@ -75,6 +75,11 @@ export class Disco {
   @Column({
     comment: '',
   })
+  contractAddr: string;
+
+  @Column({
+    comment: '',
+  })
   createdAt: Date;
 
   @Column({
