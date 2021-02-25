@@ -5308,91 +5308,91 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-web3-bzz@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-bzz/download/web3-bzz-1.3.1.tgz#c7e13e5fbbbe4634b0d883e5440069fc58e58044"
-  integrity sha1-x+E+X7u+RjSw2IPlRABp/FjlgEQ=
+web3-bzz@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-bzz/download/web3-bzz-1.3.4.tgz#9be529353c4063bc68395370cb5d8e414c6b6c87"
+  integrity sha1-m+UpNTxAY7xoOVNwy12OQUxrbIc=
   dependencies:
     "@types/node" "^12.12.6"
     got "9.6.0"
     swarm-js "^0.1.40"
     underscore "1.9.1"
 
-web3-core-helpers@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-core-helpers/download/web3-core-helpers-1.3.1.tgz#ffd6f47c1b54a8523f00760a8d713f44d0f97e97"
-  integrity sha1-/9b0fBtUqFI/AHYKjXE/RND5fpc=
+web3-core-helpers@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-core-helpers/download/web3-core-helpers-1.3.4.tgz#b8549740bf24d5c71688d89c3cdd802d8d36b4e4"
+  integrity sha1-uFSXQL8k1ccWiNicPN2ALY02tOQ=
   dependencies:
     underscore "1.9.1"
-    web3-eth-iban "1.3.1"
-    web3-utils "1.3.1"
+    web3-eth-iban "1.3.4"
+    web3-utils "1.3.4"
 
-web3-core-method@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-core-method/download/web3-core-method-1.3.1.tgz#c1d8bf1e2104a8d625c99caf94218ad2dc948c92"
-  integrity sha1-wdi/HiEEqNYlyZyvlCGK0tyUjJI=
+web3-core-method@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-core-method/download/web3-core-method-1.3.4.tgz#6c2812d96dd6c811b9e6c8a5d25050d2c22b9527"
+  integrity sha1-bCgS2W3WyBG55sil0lBQ0sIrlSc=
   dependencies:
     "@ethersproject/transactions" "^5.0.0-beta.135"
     underscore "1.9.1"
-    web3-core-helpers "1.3.1"
-    web3-core-promievent "1.3.1"
-    web3-core-subscriptions "1.3.1"
-    web3-utils "1.3.1"
+    web3-core-helpers "1.3.4"
+    web3-core-promievent "1.3.4"
+    web3-core-subscriptions "1.3.4"
+    web3-utils "1.3.4"
 
-web3-core-promievent@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-core-promievent/download/web3-core-promievent-1.3.1.tgz#b4da4b34cd9681e22fcda25994d7629280a1e046"
-  integrity sha1-tNpLNM2WgeIvzaJZlNdikoCh4EY=
+web3-core-promievent@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-core-promievent/download/web3-core-promievent-1.3.4.tgz#d166239012d91496cdcbe91d5d54071ea818bc73"
+  integrity sha1-0WYjkBLZFJbNy+kdXVQHHqgYvHM=
   dependencies:
     eventemitter3 "4.0.4"
 
-web3-core-requestmanager@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-core-requestmanager/download/web3-core-requestmanager-1.3.1.tgz#6dd2b5161ba778dfffe68994a4accff2decc54fe"
-  integrity sha1-bdK1FhuneN//5omUpKzP8t7MVP4=
+web3-core-requestmanager@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-core-requestmanager/download/web3-core-requestmanager-1.3.4.tgz#e105ced735c2b5fcedd5771e0ecf9879ae9c373f"
+  integrity sha1-4QXO1zXCtfzt1XceDs+Yea6cNz8=
   dependencies:
     underscore "1.9.1"
     util "^0.12.0"
-    web3-core-helpers "1.3.1"
-    web3-providers-http "1.3.1"
-    web3-providers-ipc "1.3.1"
-    web3-providers-ws "1.3.1"
+    web3-core-helpers "1.3.4"
+    web3-providers-http "1.3.4"
+    web3-providers-ipc "1.3.4"
+    web3-providers-ws "1.3.4"
 
-web3-core-subscriptions@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-core-subscriptions/download/web3-core-subscriptions-1.3.1.tgz#be1103259f91b7fc7f4c6a867aa34dea70a636f7"
-  integrity sha1-vhEDJZ+Rt/x/TGqGeqNN6nCmNvc=
+web3-core-subscriptions@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-core-subscriptions/download/web3-core-subscriptions-1.3.4.tgz#7b00e92bde21f792620cd02e6e508fcf4f4c31d3"
+  integrity sha1-ewDpK94h95JiDNAublCPz09MMdM=
   dependencies:
     eventemitter3 "4.0.4"
     underscore "1.9.1"
-    web3-core-helpers "1.3.1"
+    web3-core-helpers "1.3.4"
 
-web3-core@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-core/download/web3-core-1.3.1.tgz#fb0fc5d952a7f3d580a7e6155d2f28be064e64cb"
-  integrity sha1-+w/F2VKn89WAp+YVXS8ovgZOZMs=
+web3-core@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-core/download/web3-core-1.3.4.tgz#2cc7ba7f35cc167f7a0a46fd5855f86e51d34ce8"
+  integrity sha1-LMe6fzXMFn96Ckb9WFX4blHTTOg=
   dependencies:
     "@types/bn.js" "^4.11.5"
     "@types/node" "^12.12.6"
     bignumber.js "^9.0.0"
-    web3-core-helpers "1.3.1"
-    web3-core-method "1.3.1"
-    web3-core-requestmanager "1.3.1"
-    web3-utils "1.3.1"
+    web3-core-helpers "1.3.4"
+    web3-core-method "1.3.4"
+    web3-core-requestmanager "1.3.4"
+    web3-utils "1.3.4"
 
-web3-eth-abi@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth-abi/download/web3-eth-abi-1.3.1.tgz#d60fe5f15c7a3a426c553fdaa4199d07f1ad899c"
-  integrity sha1-1g/l8Vx6OkJsVT/apBmdB/GtiZw=
+web3-eth-abi@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth-abi/download/web3-eth-abi-1.3.4.tgz#10f5d8b6080dbb6cbaa1bcef7e0c70573da6566f"
+  integrity sha1-EPXYtggNu2y6obzvfgxwVz2mVm8=
   dependencies:
     "@ethersproject/abi" "5.0.7"
     underscore "1.9.1"
-    web3-utils "1.3.1"
+    web3-utils "1.3.4"
 
-web3-eth-accounts@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth-accounts/download/web3-eth-accounts-1.3.1.tgz#63b247461f1ae0ae46f9a5d5aa896ea80237143e"
-  integrity sha1-Y7JHRh8a4K5G+aXVqoluqAI3FD4=
+web3-eth-accounts@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth-accounts/download/web3-eth-accounts-1.3.4.tgz#cf513d78531c13ce079a5e7862820570350e79a5"
+  integrity sha1-z1E9eFMcE84Hml54YoIFcDUOeaU=
   dependencies:
     crypto-browserify "3.12.0"
     eth-lib "0.2.8"
@@ -5401,130 +5401,130 @@ web3-eth-accounts@1.3.1:
     scrypt-js "^3.0.1"
     underscore "1.9.1"
     uuid "3.3.2"
-    web3-core "1.3.1"
-    web3-core-helpers "1.3.1"
-    web3-core-method "1.3.1"
-    web3-utils "1.3.1"
+    web3-core "1.3.4"
+    web3-core-helpers "1.3.4"
+    web3-core-method "1.3.4"
+    web3-utils "1.3.4"
 
-web3-eth-contract@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth-contract/download/web3-eth-contract-1.3.1.tgz#05cb77bd2a671c5480897d20de487f3bae82e113"
-  integrity sha1-Bct3vSpnHFSAiX0g3kh/O66C4RM=
+web3-eth-contract@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth-contract/download/web3-eth-contract-1.3.4.tgz#1ea2dd71be0c4a9cf4772d4f75dbb2fa99751472"
+  integrity sha1-HqLdcb4MSpz0dy1Pdduy+pl1FHI=
   dependencies:
     "@types/bn.js" "^4.11.5"
     underscore "1.9.1"
-    web3-core "1.3.1"
-    web3-core-helpers "1.3.1"
-    web3-core-method "1.3.1"
-    web3-core-promievent "1.3.1"
-    web3-core-subscriptions "1.3.1"
-    web3-eth-abi "1.3.1"
-    web3-utils "1.3.1"
+    web3-core "1.3.4"
+    web3-core-helpers "1.3.4"
+    web3-core-method "1.3.4"
+    web3-core-promievent "1.3.4"
+    web3-core-subscriptions "1.3.4"
+    web3-eth-abi "1.3.4"
+    web3-utils "1.3.4"
 
-web3-eth-ens@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth-ens/download/web3-eth-ens-1.3.1.tgz#ccfd621ddc1fecb44096bc8e60689499a9eb4421"
-  integrity sha1-zP1iHdwf7LRAlryOYGiUmanrRCE=
+web3-eth-ens@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth-ens/download/web3-eth-ens-1.3.4.tgz#a7e4bb18481fb0e2ce5bfb3b3da2fbb0ad78cefe"
+  integrity sha1-p+S7GEgfsOLOW/s7PaL7sK14zv4=
   dependencies:
     content-hash "^2.5.2"
     eth-ens-namehash "2.0.8"
     underscore "1.9.1"
-    web3-core "1.3.1"
-    web3-core-helpers "1.3.1"
-    web3-core-promievent "1.3.1"
-    web3-eth-abi "1.3.1"
-    web3-eth-contract "1.3.1"
-    web3-utils "1.3.1"
+    web3-core "1.3.4"
+    web3-core-helpers "1.3.4"
+    web3-core-promievent "1.3.4"
+    web3-eth-abi "1.3.4"
+    web3-eth-contract "1.3.4"
+    web3-utils "1.3.4"
 
-web3-eth-iban@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth-iban/download/web3-eth-iban-1.3.1.tgz#4351e1a658efa5f3218357f0a38d6d8cad82481e"
-  integrity sha1-Q1HhpljvpfMhg1fwo41tjK2CSB4=
+web3-eth-iban@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth-iban/download/web3-eth-iban-1.3.4.tgz#5eb7a564e0dcf68730d68f48f95dd207cd173d81"
+  integrity sha1-XrelZODc9ocw1o9I+V3SB80XPYE=
   dependencies:
     bn.js "^4.11.9"
-    web3-utils "1.3.1"
+    web3-utils "1.3.4"
 
-web3-eth-personal@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth-personal/download/web3-eth-personal-1.3.1.tgz#cfe8af01588870d195dabf0a8d9e34956fb8856d"
-  integrity sha1-z+ivAViIcNGV2r8KjZ40lW+4hW0=
+web3-eth-personal@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth-personal/download/web3-eth-personal-1.3.4.tgz#0d0e0abea3447283d7ee5658ed312990c9bf48dd"
+  integrity sha1-DQ4KvqNEcoPX7lZY7TEpkMm/SN0=
   dependencies:
     "@types/node" "^12.12.6"
-    web3-core "1.3.1"
-    web3-core-helpers "1.3.1"
-    web3-core-method "1.3.1"
-    web3-net "1.3.1"
-    web3-utils "1.3.1"
+    web3-core "1.3.4"
+    web3-core-helpers "1.3.4"
+    web3-core-method "1.3.4"
+    web3-net "1.3.4"
+    web3-utils "1.3.4"
 
-web3-eth@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-eth/download/web3-eth-1.3.1.tgz#60ac4b58e5fd17b8dbbb8378abd63b02e8326727"
-  integrity sha1-YKxLWOX9F7jbu4N4q9Y7AugyZyc=
+web3-eth@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-eth/download/web3-eth-1.3.4.tgz#7c4607685e66a1c43e3e315e526c959f24f96907"
+  integrity sha1-fEYHaF5mocQ+PjFeUmyVnyT5aQc=
   dependencies:
     underscore "1.9.1"
-    web3-core "1.3.1"
-    web3-core-helpers "1.3.1"
-    web3-core-method "1.3.1"
-    web3-core-subscriptions "1.3.1"
-    web3-eth-abi "1.3.1"
-    web3-eth-accounts "1.3.1"
-    web3-eth-contract "1.3.1"
-    web3-eth-ens "1.3.1"
-    web3-eth-iban "1.3.1"
-    web3-eth-personal "1.3.1"
-    web3-net "1.3.1"
-    web3-utils "1.3.1"
+    web3-core "1.3.4"
+    web3-core-helpers "1.3.4"
+    web3-core-method "1.3.4"
+    web3-core-subscriptions "1.3.4"
+    web3-eth-abi "1.3.4"
+    web3-eth-accounts "1.3.4"
+    web3-eth-contract "1.3.4"
+    web3-eth-ens "1.3.4"
+    web3-eth-iban "1.3.4"
+    web3-eth-personal "1.3.4"
+    web3-net "1.3.4"
+    web3-utils "1.3.4"
 
-web3-net@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-net/download/web3-net-1.3.1.tgz#79374b1df37429b0839b83b0abc4440ac6181568"
-  integrity sha1-eTdLHfN0KbCDm4Owq8RECsYYFWg=
+web3-net@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-net/download/web3-net-1.3.4.tgz#d76158bf0b4a7b3b14352b4f95472db9efc57a2a"
+  integrity sha1-12FYvwtKezsUNStPlUctue/Feio=
   dependencies:
-    web3-core "1.3.1"
-    web3-core-method "1.3.1"
-    web3-utils "1.3.1"
+    web3-core "1.3.4"
+    web3-core-method "1.3.4"
+    web3-utils "1.3.4"
 
-web3-providers-http@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-providers-http/download/web3-providers-http-1.3.1.tgz#becbea61706b2fa52e15aca6fe519ee108a8fab9"
-  integrity sha1-vsvqYXBrL6UuFaym/lGe4Qio+rk=
+web3-providers-http@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-providers-http/download/web3-providers-http-1.3.4.tgz#89389e18e27148faa2fef58842740ffadbdda8cc"
+  integrity sha1-iTieGOJxSPqi/vWIQnQP+tvdqMw=
   dependencies:
-    web3-core-helpers "1.3.1"
+    web3-core-helpers "1.3.4"
     xhr2-cookies "1.1.0"
 
-web3-providers-ipc@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-providers-ipc/download/web3-providers-ipc-1.3.1.tgz#3cb2572fc5286ab2f3117e0a2dce917816c3dedb"
-  integrity sha1-PLJXL8UoarLzEX4KLc6ReBbD3ts=
+web3-providers-ipc@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-providers-ipc/download/web3-providers-ipc-1.3.4.tgz#b963518989b1b7847063cdd461ff73b83855834a"
+  integrity sha1-uWNRiYmxt4RwY83UYf9zuDhVg0o=
   dependencies:
     oboe "2.1.5"
     underscore "1.9.1"
-    web3-core-helpers "1.3.1"
+    web3-core-helpers "1.3.4"
 
-web3-providers-ws@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-providers-ws/download/web3-providers-ws-1.3.1.tgz#a70140811d138a1a5cf3f0c39d11887c8e341c83"
-  integrity sha1-pwFAgR0Tihpc8/DDnRGIfI40HIM=
+web3-providers-ws@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-providers-ws/download/web3-providers-ws-1.3.4.tgz#b94c2e0ec51a0c472abdec53a472b5bf8176bec1"
+  integrity sha1-uUwuDsUaDEcqvexTpHK1v4F2vsE=
   dependencies:
     eventemitter3 "4.0.4"
     underscore "1.9.1"
-    web3-core-helpers "1.3.1"
+    web3-core-helpers "1.3.4"
     websocket "^1.0.32"
 
-web3-shh@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-shh/download/web3-shh-1.3.1.tgz#42294d684358c22aa48616cb9a3eb2e9c1e6362f"
-  integrity sha1-QilNaENYwiqkhhbLmj6y6cHmNi8=
+web3-shh@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-shh/download/web3-shh-1.3.4.tgz#b7d29e118f26416c1a74575e585be379cc01a77a"
+  integrity sha1-t9KeEY8mQWwadFdeWFvjecwBp3o=
   dependencies:
-    web3-core "1.3.1"
-    web3-core-method "1.3.1"
-    web3-core-subscriptions "1.3.1"
-    web3-net "1.3.1"
+    web3-core "1.3.4"
+    web3-core-method "1.3.4"
+    web3-core-subscriptions "1.3.4"
+    web3-net "1.3.4"
 
-web3-utils@1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3-utils/download/web3-utils-1.3.1.tgz#9aa880dd8c9463fe5c099107889f86a085370c2e"
-  integrity sha1-mqiA3YyUY/5cCZEHiJ+GoIU3DC4=
+web3-utils@1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3-utils/download/web3-utils-1.3.4.tgz#9b1aa30d7549f860b573e7bb7e690999e7192198"
+  integrity sha1-mxqjDXVJ+GC1c+e7fmkJmecZIZg=
   dependencies:
     bn.js "^4.11.9"
     eth-lib "0.2.8"
@@ -5535,18 +5535,18 @@ web3-utils@1.3.1:
     underscore "1.9.1"
     utf8 "3.0.0"
 
-web3@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.npm.taobao.org/web3/download/web3-1.3.1.tgz#f780138c92ae3c42ea45e1a3c6ae8844e0aa5054"
-  integrity sha1-94ATjJKuPELqReGjxq6IROCqUFQ=
+web3@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.npm.taobao.org/web3/download/web3-1.3.4.tgz#31e014873360aa5840eb17f9f171190c967cffb7"
+  integrity sha1-MeAUhzNgqlhA6xf58XEZDJZ8/7c=
   dependencies:
-    web3-bzz "1.3.1"
-    web3-core "1.3.1"
-    web3-eth "1.3.1"
-    web3-eth-personal "1.3.1"
-    web3-net "1.3.1"
-    web3-shh "1.3.1"
-    web3-utils "1.3.1"
+    web3-bzz "1.3.4"
+    web3-core "1.3.4"
+    web3-eth "1.3.4"
+    web3-eth-personal "1.3.4"
+    web3-net "1.3.4"
+    web3-shh "1.3.4"
+    web3-utils "1.3.4"
 
 webpack-node-externals@2.5.2:
   version "2.5.2"

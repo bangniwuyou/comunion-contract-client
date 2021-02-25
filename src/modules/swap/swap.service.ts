@@ -47,10 +47,17 @@ export class SwapService {
     );
     this.ethClient = new (Web3 as any)(
       new (Web3 as any).providers.WebsocketProvider(wsEndPoint, {
-        // 自动重连
+        clientConfig: {
+          // Useful to keep a connection alive
+          keepalive: true,
+          keepaliveInterval: 60000, // ms
+        },
+        // Enable auto reconnection
         reconnect: {
           auto: true,
-          onTimeout: true,
+          delay: 5000, // ms
+          maxAttempts: 5,
+          onTimeout: false,
         },
       }),
     ).eth;
